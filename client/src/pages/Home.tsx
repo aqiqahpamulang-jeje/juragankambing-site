@@ -1,6 +1,6 @@
 /* Style reminder: Lumbung Senja — rustic-editorial, hangat, asimetris, dengan aksen Kunyit Aqiqah #E88B19. */
 import { useEffect, useState } from "react";
-import { ArrowUpRight, Check, ChevronDown, Instagram, MapPin, Menu, Music2, Phone, Sparkles, X } from "lucide-react";
+import { ArrowUpRight, Check, ChevronDown, Instagram, MapPin, Menu, MessageCircle, Music2, Phone, Sparkles, X } from "lucide-react";
 
 const heroImage = "/manus-storage/juragankambing-hero_647c54d4.png";
 const processImage = "https://images.unsplash.com/photo-1533318087102-b3ad366ed041?auto=format&fit=crop&w=1200&q=85";
@@ -117,6 +117,8 @@ export default function Home() {
 
         <section className="closing-section section-pad" id="kontak"><div className="closing-card"><div><div className="section-kicker">08 — Hubungi kami</div><h2>Anda ingin melaksanakan<br /><em>momen terbaik?</em></h2></div><div className="closing-actions"><p>Jangan ragu bertanya. Kami siap membantu dari pilihan kambing sampai paket yang paling pas untuk keluarga.</p><a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Mulai ngobrol <ArrowUpRight size={17} /></a><a className="phone-link" href="tel:+6285211885000"><Phone size={16} /> 0852 1188 5000</a><div className="location-links" aria-label="Lokasi JuraganKambing"><a className="location-link" href="https://maps.app.goo.gl/NgCT3uHeq935vQH66?g_st=aw" target="_blank" rel="noreferrer"><MapPin size={17} /><span><strong>Kantor Pemasaran</strong><small className="location-address">Villa Pamulang, Jl Srikandi 3 Blok DC4 No 16A, Pd. Benda, Kec. Pamulang, Kota Tangerang Selatan, Banten 15418</small><small className="location-hours">Layanan: 24 jam</small></span><ArrowUpRight size={15} /></a><a className="location-link" href="https://maps.app.goo.gl/HHwaEs8Q2F6v1gGg6?g_st=ac" target="_blank" rel="noreferrer"><MapPin size={17} /><span><strong>Kandang &amp; RPH</strong><small className="location-address">Gang Kirai, Kademangan, Kec. Setu, Kota Tangerang Selatan, Banten 15314</small><small className="location-hours">Layanan: 24 jam</small></span><ArrowUpRight size={15} /></a></div><div className="social-links" aria-label="Media sosial JuraganKambing"><span>Ikuti kami</span><a href="https://instagram.com/juragankambing.co" target="_blank" rel="noreferrer" aria-label="Instagram JuraganKambing"><Instagram size={18} /><span>Instagram</span><ArrowUpRight size={13} /></a><a href="https://tiktok.com/aqiqahpamulang.com" target="_blank" rel="noreferrer" aria-label="TikTok Aqiqah Pamulang"><Music2 size={18} /><span>TikTok</span><ArrowUpRight size={13} /></a></div></div></div></section>
       </main>
+
+      <a className="floating-whatsapp" href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="Hubungi JuraganKambing melalui WhatsApp"><MessageCircle size={22} /><span>WhatsApp</span></a>
 
       <footer className="site-footer"><div className="footer-brand"><img className="brand-logo-image" src={logoImage} alt="JuraganKambing" /></div><p>Aqiqah mudah, proses amanah.<br />Pamulang · Tangerang Selatan</p><div className="footer-links"><a href="#beranda">Kembali ke atas <ArrowUpRight size={15} /></a><span>© 2026 Juragan Kambing. All Rights Reserved.</span><span className="footer-credit">Dibuat dengan <span aria-hidden="true">❤️</span> untuk pelayanan lebih baik</span></div></footer>
     </div>
