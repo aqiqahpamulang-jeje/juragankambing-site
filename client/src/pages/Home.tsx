@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { ArrowUpRight, Check, ChevronDown, Instagram, MapPin, Menu, MessageCircle, Music2, Phone, Sparkles, X } from "lucide-react";
 
 const imagePath = (file: string) => `${import.meta.env.BASE_URL}image/${file}`;
-const heroImage = imagePath("juragankambing-hero.webp");
+const heroImage = imagePath("juragankambing-hero-1600.webp");
+const heroMobileImage = imagePath("juragankambing-hero-960.webp");
 const processImage = imagePath("proses-kandang.avif");
 const menuImage = imagePath("menu-hangat.avif");
 const logoImage = imagePath("logo-juragankambing.webp");
@@ -93,7 +94,10 @@ export default function Home() {
             <div className="hero-actions"><a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Konsultasi via WhatsApp <ArrowUpRight size={17} /></a><a className="text-link" href="#paket">Lihat pilihan paket <ChevronDown size={16} /></a></div>
             <div className="hero-proof"><div className="proof-avatars"><span>J</span><span>A</span><span>K</span></div><p><strong>Pelayanan dekat dan jelas.</strong><br />Dari keluarga, untuk keluarga.</p></div>
           </div>
-          <div className="hero-visual"><img src={heroImage} alt="Kambing sehat di area peternakan JuraganKambing" /><div className="hero-stamp"><span>Sehat</span><strong>&amp;</strong><span>Terjaga</span></div><div className="hero-caption"><span>01 / 04</span><span>Peternakan pilihan kami</span></div></div>
+          <div className="hero-visual"><picture>
+              <source media="(max-width: 720px)" srcSet={heroMobileImage} />
+              <img src={heroImage} srcSet={`${heroMobileImage} 960w, ${heroImage} 1600w`} sizes="(max-width: 720px) 100vw, 56vw" alt="Kambing sehat di area peternakan JuraganKambing" width="1600" height="900" fetchPriority="high" decoding="async" />
+            </picture><div className="hero-stamp"><span>Sehat</span><strong>&amp;</strong><span>Terjaga</span></div><div className="hero-caption"><span>01 / 04</span><span>Peternakan pilihan kami</span></div></div>
         </section>
 
         <div className="address-ribbon"><span className="ribbon-label">INFO</span><span>Alamat kami: Vila Pamulang, Jl. Srikandi 3 DC4 No.16, Pondok Benda, Pamulang.</span><a href={whatsappUrl} target="_blank" rel="noreferrer">Hubungi kami <ArrowUpRight size={15} /></a></div>
