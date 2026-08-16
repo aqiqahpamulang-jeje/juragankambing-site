@@ -1,5 +1,5 @@
 /* Style reminder: Lumbung Senja — rustic-editorial, hangat, asimetris, dengan aksen Kunyit Aqiqah #E88B19. */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowUpRight, Check, ChevronDown, Menu, Phone, Sparkles, X } from "lucide-react";
 
 const heroImage = "/manus-storage/juragankambing-hero_647c54d4.png";
@@ -23,6 +23,19 @@ const services = [
   { number: "06", name: "Tumpeng", image: "/manus-storage/layanan-tumpeng_aeedb2c8.jpg", description: "Hidangan tumpeng nasi kuning lezat dengan lauk pauk melimpah. Sempurna untuk acara syukuran, arisan, dan perayaan khusus lainnya.", items: ["Nasi kuning premium", "Lauk pauk variatif", "Porsi bisa disesuaikan"] },
 ];
 
+const testimonials = [
+  { quote: "Mau ngasih testimoni, MasyaAllah bumbunya sampai meresap ke dagingnya. Yummy... Semoga berkah usahanya", author: "Ibu Via", location: "Komp Timah Depok", source: "Testimoni melalui chat WhatsApp Messenger" },
+  { quote: "Alhamdulillah, terima kasih sudah membantu mendistribusikan paket Aqiqah. MasyaAllah sampai menangis denger doa mereka, semoga santri diberikan kesehatan, keberkahan dan kemuliaan hidup dunia akhirat. Jazakallah khairan atas semuanya", author: "Ibu Kartika", location: "Pondok Benda, Pamulang", source: "Testimoni melalui chat WhatsApp Messenger" },
+  { quote: "Terima kasih Juragan Kambing untuk membantu saya dalam menyelenggarakan aqiqah, terima kasih sudah amanah. Dokumentasi pemotongan lengkap, makanan enak, respon dan komunikasinya cepat, harga terjangkau. Sukses terus kedepannya... Aamiin", author: "Bpk Robby", location: "Cirendeu, Ciputat", source: "Testimoni melalui chat WhatsApp Messenger" },
+  { quote: "Bulan Maret lalu tgl 7 2021, saya aqiqah putri saya yang pertama. Alhamdulillah respon penjualnya cepat & tanggap. Serta pas hari H nya pun datang ontime. Yang gak mengecewakan juga makanannya enak. Untuk sate kambingnya pengolahannya bagus sekali, tidak bau prengus sama sekali & gulai kambingnya juga enak sekali, rasanya pas banget.", author: "Ibu Desy Anagraini", location: "Vila Dago Pamulang", source: "Testimoni melalui ulasan Google My Business" },
+  { quote: "Masakannya enak... Saya puas pesan nasi box Aqiqah di Juragan Kambing", author: "Ibu Nia Juniarti", location: "BSD, Tangsel", source: "Testimoni melalui chat WhatsApp Messenger" },
+  { quote: "Terima kasih sudah disalurkan Aqiqahnya, semoga berkah. Sate dan gulainya enak.. Tamu saya yang tidak doyan daging kambing, jadi doyan... Katanya enak", author: "Ibu Nurna Rochfanti", location: "Pamulang 2", source: "Testimoni melalui chat WhatsApp Messenger" },
+  { quote: "Sudah sampai dengan lengkap dan enak mas, Alhamdulillah sudah selesai distribusi ke tetangga juga. Enak banget mas, terima kasih", author: "Bpk Eko", location: "Foresta, BSD City", source: "Testimoni melalui chat WhatsApp Messenger" },
+  { quote: "Assalamu’alaikum. Terima kasih Juragan Kambing atas pelayanan yang diberikan, masakan yang memuaskan dan juga enak. Mohon maaf sebelumnya jika ada salah dari kami sekeluarga. Wa’alaikumsalam", author: "Bpk Wakhid", location: "Gunung Sindur, Bogor", source: "Testimoni melalui chat WhatsApp Messenger" },
+  { quote: "Alhamdulillah saya menggunakan jasa Aqiqah ini untuk anak pertama saya pada tahun 2019 tahun lalu. Pelayanan atau servicesnya sangat cepat, harga yang ditawarkan juga terbilang murah, namun dengan rasa dan tampilan yang berkualitas. Semoga usaha Jasa Aqiqah semakin berkembang dan diberikan kelancaran rezeki.", author: "Bpk M. Rizky Andrianto", location: "Karawaci", source: "Testimoni melalui ulasan Google My Business" },
+  { quote: "Alhamdulillah saya menggunakan jasa Aqiqah ini untuk anak pertama saya pada tahun 2019 tahun lalu. Pelayanan atau servicesnya sangat cepat, harga yang ditawarkan juga terbilang murah, namun dengan rasa dan tampilan yang berkualitas. Semoga usaha Jasa Aqiqah semakin berkembang dan diberikan kelancaran rezeki.", author: "Bpk M. Rizky Andrianto", location: "Karawaci", source: "Testimoni melalui ulasan Google My Business" },
+];
+
 const packages = [
   { name: "Aqiqah 1 ekor Hemat", price: "Rp 1.700.000", unitPrice: 1700000, detail: "160 tusuk sate & 40 bungkus gulai", menu: "Sate kambing, gulai kambing, nasi putih, sambal, dan acar.", accent: "olive", image: "/manus-storage/paket-hemat_b4d53730.png", items: ["Kambing sehat sesuai syariat", "Masakan olahan kambing", "Nasi box siap dibagikan"] },
   { name: "Aqiqah 1 ekor Standar", price: "Rp 1.900.000", unitPrice: 1900000, detail: "240 tusuk sate & 60 bungkus gulai", menu: "Sate kambing, gulai kambing, nasi putih, sambal, acar, dan kerupuk.", accent: "orange", image: "/manus-storage/paket-standar_3aa84c95.png", items: ["Kambing sehat sesuai syariat", "Porsi sate dan gulai lebih banyak", "Dokumentasi proses"] },
@@ -36,8 +49,14 @@ export default function Home() {
   const [selectedPackage, setSelectedPackage] = useState("Aqiqah 1 ekor Standar");
   const [additionalCostInput, setAdditionalCostInput] = useState("0");
   const [discountInput, setDiscountInput] = useState("0");
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
 
   const closeMenu = () => setMenuOpen(false);
+  useEffect(() => {
+    const timer = window.setInterval(() => setTestimonialIndex((current) => (current + 1) % testimonials.length), 5000);
+    return () => window.clearInterval(timer);
+  }, []);
+  const visibleTestimonials = Array.from({ length: 3 }, (_, offset) => testimonials[(testimonialIndex + offset) % testimonials.length]);
   const selectedPackageData = packages.find((pkg) => pkg.name === selectedPackage) ?? packages[1];
   const safeAnimalCount = Math.max(1, parseInt(animalCountInput, 10) || 1);
   const safeAdditionalCost = Math.max(0, parseInt(additionalCostInput, 10) || 0);
@@ -95,7 +114,9 @@ export default function Home() {
 
         <section className="services-section section-pad" id="layanan"><div className="services-heading"><div><div className="section-kicker">06 — Untuk momen yang berbeda</div><h2>Layanan <em>yang kami siapkan.</em></h2></div><p>Dari acara keluarga hingga momen berbagi, kami bantu menyiapkan hidangan dan layanan yang terasa dekat, rapi, dan amanah.</p></div><div className="services-grid">{services.map((service) => <article className="service-card" key={service.name}><div className="service-photo"><img src={service.image} alt={`Foto layanan ${service.name}`} /><span className="service-number">{service.number}</span></div><div className="service-body"><h3>{service.name}</h3><p>{service.description}</p><ul>{service.items.map((item) => <li key={item}>{item}</li>)}</ul><a href={whatsappUrl} target="_blank" rel="noreferrer">Tanya layanan <ArrowUpRight size={15} /></a></div></article>)}</div></section>
 
-        <section className="closing-section section-pad" id="kontak"><div className="closing-card"><div><div className="section-kicker">07 — Kita bicarakan</div><h2>Siap menyiapkan<br /><em>momen syukur?</em></h2></div><div className="closing-actions"><p>Jangan ragu bertanya. Kami siap membantu dari pilihan kambing sampai paket yang paling pas untuk keluarga.</p><a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Mulai ngobrol <ArrowUpRight size={17} /></a><a className="phone-link" href="tel:+628118204142"><Phone size={16} /> 0811 820 4142</a></div></div></section>
+        <section className="testimonials-section section-pad" id="testimoni"><div className="testimonials-heading"><div><div className="section-kicker">07 — Cerita dari keluarga</div><h2>Yang mereka <em>rasakan.</em></h2></div><p>Testimoni berikut berasal dari pesan dan ulasan pelanggan yang telah menggunakan layanan JuraganKambing.</p></div><div className="testimonials-viewport" aria-live="polite"><div className="testimonials-grid testimonial-slide-left" key={testimonialIndex}>{visibleTestimonials.map((testimonial, index) => <article className="testimonial-card" key={`${testimonial.author}-${testimonial.location}-${testimonialIndex}-${index}`}><div className="testimonial-stars" aria-label="Lima dari lima bintang">★★★★★</div><blockquote>“{testimonial.quote}”</blockquote><div className="testimonial-author"><strong>{testimonial.author}</strong><span>{testimonial.location}</span></div><small>{testimonial.source}</small></article>)}</div></div><div className="testimonials-seo" aria-label="Daftar seluruh testimoni pelanggan">{testimonials.map((testimonial, index) => <p key={`${testimonial.author}-${testimonial.location}-${index}`}>“{testimonial.quote}” — {testimonial.author}, {testimonial.location}.</p>)}</div></section>
+
+        <section className="closing-section section-pad" id="kontak"><div className="closing-card"><div><div className="section-kicker">08 — Kita bicarakan</div><h2>Siap menyiapkan<br /><em>momen syukur?</em></h2></div><div className="closing-actions"><p>Jangan ragu bertanya. Kami siap membantu dari pilihan kambing sampai paket yang paling pas untuk keluarga.</p><a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Mulai ngobrol <ArrowUpRight size={17} /></a><a className="phone-link" href="tel:+628118204142"><Phone size={16} /> 0811 820 4142</a></div></div></section>
       </main>
 
       <footer className="site-footer"><div className="footer-brand"><span className="brand-seal" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21"/><path d="M16 18c-4-5-5-9-2-12 4 1 7 4 8 8m10 4c4-5 5-9 2-12-4 1-7 4-8 8M16 25c2-4 5-6 8-6s6 2 8 6v7c-2 3-5 5-8 5s-6-2-8-5z"/><circle cx="21" cy="27" r="1.4"/><circle cx="27" cy="27" r="1.4"/><path d="M22 32c1.3 1 2.7 1 4 0"/></svg></span><span><strong>juragan</strong><em>kambing</em></span></div><p>Aqiqah mudah, proses amanah.<br />Pamulang · Tangerang Selatan</p><div className="footer-links"><a href="#beranda">Kembali ke atas <ArrowUpRight size={15} /></a><span>© 2026 JuraganKambing</span></div></footer>

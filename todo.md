@@ -1,7 +1,8 @@
 # TODO
 
-- [x] Simpan dan unggah empat foto referensi ke folder image.
-- [x] Hubungkan foto Hemat, Standar, Super, dan Istimewa sesuai nama paket.
-- [x] Pastikan foto tampil rasio 5:4 pada kartu.
+- [x] Susun 10 testimoni asli menjadi data teks terstruktur.
+- [x] Tambahkan section Testimoni di bawah Layanan Kami.
+- [x] Tampilkan 3 testimoni sekaligus dan geser otomatis dari kanan ke kiri.
+- [x] Pastikan teks dapat dibaca mesin pencarian dan responsif di HP.
 - [x] Jalankan pemeriksaan TypeScript dan build produksi.
 - [ ] Simpan checkpoint baru dan laporkan perubahan kepada pengguna.
