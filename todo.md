@@ -1,8 +1,8 @@
 # TODO
 
-- [x] Susun 10 testimoni asli menjadi data teks terstruktur.
-- [x] Tambahkan section Testimoni di bawah Layanan Kami.
-- [x] Tampilkan 3 testimoni sekaligus dan geser otomatis dari kanan ke kiri.
-- [x] Pastikan teks dapat dibaca mesin pencarian dan responsif di HP.
+- [x] Simpan dan unggah logo pengguna ke folder image.
+- [x] Ganti logo header dengan aset logo baru.
+- [x] Ganti logo footer dengan aset logo baru.
+- [x] Pastikan ukuran dan keterbacaan logo baik di desktop serta mobile.
 - [x] Jalankan pemeriksaan TypeScript dan build produksi.
 - [ ] Simpan checkpoint baru dan laporkan perubahan kepada pengguna.

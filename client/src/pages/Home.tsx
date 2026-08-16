@@ -5,7 +5,7 @@ import { ArrowUpRight, Check, ChevronDown, Menu, Phone, Sparkles, X } from "luci
 const heroImage = "/manus-storage/juragankambing-hero_647c54d4.png";
 const processImage = "https://images.unsplash.com/photo-1533318087102-b3ad366ed041?auto=format&fit=crop&w=1200&q=85";
 const menuImage = "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=85";
-const logoImage = "/manus-storage/juragankambing-logo_436ddf41.png";
+const logoImage = "/manus-storage/logo-juragankambing_79e254bb.png";
 const whatsappUrl = "https://wa.me/628118204142?text=Assalamualaikum%2C%20saya%20ingin%20konsultasi%20paket%20aqiqah.";
 
 const benefits = [
@@ -71,8 +71,7 @@ export default function Home() {
       <div className="announcement"><span>JURAGANKAMBING / AQIQAH YANG TERASA DEKAT</span><span className="announcement-location">Pamulang · Tangerang Selatan</span></div>
       <header className="site-header">
         <a className="brand" href="#beranda" aria-label="JuraganKambing beranda" onClick={closeMenu}>
-          <span className="brand-seal" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21"/><path d="M16 18c-4-5-5-9-2-12 4 1 7 4 8 8m10 4c4-5 5-9 2-12-4 1-7 4-8 8M16 25c2-4 5-6 8-6s6 2 8 6v7c-2 3-5 5-8 5s-6-2-8-5z"/><circle cx="21" cy="27" r="1.4"/><circle cx="27" cy="27" r="1.4"/><path d="M22 32c1.3 1 2.7 1 4 0"/></svg></span>
-          <span><strong>juragan</strong><em>kambing</em></span>
+          <img className="brand-logo-image" src={logoImage} alt="JuraganKambing" />
         </a>
         <nav className={`main-nav ${menuOpen ? "is-open" : ""}`} aria-label="Navigasi utama">
           <a href="#kenapa" onClick={closeMenu}>Kenapa kami</a>
@@ -119,7 +118,7 @@ export default function Home() {
         <section className="closing-section section-pad" id="kontak"><div className="closing-card"><div><div className="section-kicker">08 — Kita bicarakan</div><h2>Siap menyiapkan<br /><em>momen syukur?</em></h2></div><div className="closing-actions"><p>Jangan ragu bertanya. Kami siap membantu dari pilihan kambing sampai paket yang paling pas untuk keluarga.</p><a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Mulai ngobrol <ArrowUpRight size={17} /></a><a className="phone-link" href="tel:+628118204142"><Phone size={16} /> 0811 820 4142</a></div></div></section>
       </main>
 
-      <footer className="site-footer"><div className="footer-brand"><span className="brand-seal" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21"/><path d="M16 18c-4-5-5-9-2-12 4 1 7 4 8 8m10 4c4-5 5-9 2-12-4 1-7 4-8 8M16 25c2-4 5-6 8-6s6 2 8 6v7c-2 3-5 5-8 5s-6-2-8-5z"/><circle cx="21" cy="27" r="1.4"/><circle cx="27" cy="27" r="1.4"/><path d="M22 32c1.3 1 2.7 1 4 0"/></svg></span><span><strong>juragan</strong><em>kambing</em></span></div><p>Aqiqah mudah, proses amanah.<br />Pamulang · Tangerang Selatan</p><div className="footer-links"><a href="#beranda">Kembali ke atas <ArrowUpRight size={15} /></a><span>© 2026 JuraganKambing</span></div></footer>
+      <footer className="site-footer"><div className="footer-brand"><img className="brand-logo-image" src={logoImage} alt="JuraganKambing" /></div><p>Aqiqah mudah, proses amanah.<br />Pamulang · Tangerang Selatan</p><div className="footer-links"><a href="#beranda">Kembali ke atas <ArrowUpRight size={15} /></a><span>© 2026 JuraganKambing</span></div></footer>
     </div>
   );
 }
