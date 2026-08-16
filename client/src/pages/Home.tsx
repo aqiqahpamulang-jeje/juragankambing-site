@@ -4,8 +4,8 @@ import { ArrowUpRight, Check, ChevronDown, Instagram, MapPin, Menu, MessageCircl
 
 const imagePath = (file: string) => `${import.meta.env.BASE_URL}image/${file}`;
 const heroImage = imagePath("juragankambing-hero.webp");
-const processImage = imagePath("juragankambing-hero.webp");
-const menuImage = imagePath("paket-standar.png");
+const processImage = imagePath("proses-kandang.avif");
+const menuImage = imagePath("menu-hangat.avif");
 const logoImage = imagePath("logo-juragankambing.png");
 const whatsappUrl = "https://wa.me/6285211885000?text=Assalamualaikum%2C%20saya%20ingin%20konsultasi%20paket%20aqiqah.";
 
@@ -16,12 +16,12 @@ const benefits = [
 ];
 
 const services = [
-  { number: "01", name: "Katering", image: imagePath("paket-istimewa.png"), description: "Menyediakan katering dengan menu beragam untuk berbagai acara. Mulai dari menu tradisional hingga modern dengan cita rasa terbaik.", items: ["Menu customizable", "Penyajian profesional", "Kapasitas fleksibel"] },
-  { number: "02", name: "Kambing Guling", image: imagePath("juragankambing-hero.webp"), description: "Kambing guling dengan daging pilihan, dimasak dengan bumbu khas yang lezat. Cocok untuk acara keluarga, arisan, dan gathering.", items: ["Daging berkualitas premium", "Bumbu khas yang lezat", "Pengiriman tepat waktu"] },
-  { number: "03", name: "Aqiqah", image: imagePath("paket-standar.png"), description: "Layanan aqiqah lengkap dengan penyediaan hewan, pengolahan acara, dan distribusi daging sesuai tradisi Islam.", items: ["Hewan pilihan sehat", "Pengurusan lengkap", "Sesuai syariat"] },
-  { number: "04", name: "Qurban", image: imagePath("juragankambing-hero.webp"), description: "Layanan qurban untuk memenuhi ibadah Anda. Kami menyediakan hewan berkualitas dan pengelolaan yang transparan serta profesional.", items: ["Hewan berstandar syariat", "Transparansi penuh", "Distribusi tepat"] },
-  { number: "05", name: "Snack Box", image: imagePath("paket-super.png"), description: "Paket snack box eksklusif dengan berbagai pilihan cemilan lezat dan berkualitas. Cocok untuk hadiah, souvenir, atau konsumsi pribadi.", items: ["Berbagai pilihan rasa", "Kemasan menarik", "Bisa custom sesuai tema"] },
-  { number: "06", name: "Tumpeng", image: imagePath("paket-hemat.png"), description: "Hidangan tumpeng nasi kuning lezat dengan lauk pauk melimpah. Sempurna untuk acara syukuran, arisan, dan perayaan khusus lainnya.", items: ["Nasi kuning premium", "Lauk pauk variatif", "Porsi bisa disesuaikan"] },
+  { number: "01", name: "Katering", image: imagePath("layanan-katering.png"), description: "Menyediakan katering dengan menu beragam untuk berbagai acara. Mulai dari menu tradisional hingga modern dengan cita rasa terbaik.", items: ["Menu customizable", "Penyajian profesional", "Kapasitas fleksibel"] },
+  { number: "02", name: "Kambing Guling", image: imagePath("layanan-kambing-guling.png"), description: "Kambing guling dengan daging pilihan, dimasak dengan bumbu khas yang lezat. Cocok untuk acara keluarga, arisan, dan gathering.", items: ["Daging berkualitas premium", "Bumbu khas yang lezat", "Pengiriman tepat waktu"] },
+  { number: "03", name: "Aqiqah", image: imagePath("layanan-aqiqah.png"), description: "Layanan aqiqah lengkap dengan penyediaan hewan, pengolahan acara, dan distribusi daging sesuai tradisi Islam.", items: ["Hewan pilihan sehat", "Pengurusan lengkap", "Sesuai syariat"] },
+  { number: "04", name: "Qurban", image: imagePath("layanan-qurban.png"), description: "Layanan qurban untuk memenuhi ibadah Anda. Kami menyediakan hewan berkualitas dan pengelolaan yang transparan serta profesional.", items: ["Hewan berstandar syariat", "Transparansi penuh", "Distribusi tepat"] },
+  { number: "05", name: "Snack Box", image: imagePath("layanan-snack-box.png"), description: "Paket snack box eksklusif dengan berbagai pilihan cemilan lezat dan berkualitas. Cocok untuk hadiah, souvenir, atau konsumsi pribadi.", items: ["Berbagai pilihan rasa", "Kemasan menarik", "Bisa custom sesuai tema"] },
+  { number: "06", name: "Tumpeng", image: imagePath("layanan-tumpeng.png"), description: "Hidangan tumpeng nasi kuning lezat dengan lauk pauk melimpah. Sempurna untuk acara syukuran, arisan, dan perayaan khusus lainnya.", items: ["Nasi kuning premium", "Lauk pauk variatif", "Porsi bisa disesuaikan"] },
 ];
 
 const testimonials = [
