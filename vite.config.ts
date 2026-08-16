@@ -206,8 +206,9 @@ function vitePluginStorageProxy(): Plugin {
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
 
 export default defineConfig({
-  // GitHub Pages project sites are served below /<repository-name>/.
-  base: process.env.GITHUB_ACTIONS ? "/juragankambing-site/" : "/",
+  // The site is served from the custom domain aqiqahpamulang.com.
+  // Keep root-relative asset URLs so both the custom domain and GitHub redirect work.
+  base: "/",
   plugins,
   resolve: {
     alias: {
