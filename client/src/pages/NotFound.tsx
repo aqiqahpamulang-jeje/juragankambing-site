@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle, Home } from "lucide-react";
-import { useLocation } from "wouter";
-
 export default function NotFound() {
-  const [, setLocation] = useLocation();
+  const homePath = import.meta.env.BASE_URL;
 
   const handleGoHome = () => {
-    setLocation("/");
+    // Use the Vite base path so GitHub Pages project sites stay under /juragankambing-site/.
+    window.location.assign(homePath);
   };
 
   return (
