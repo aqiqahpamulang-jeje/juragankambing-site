@@ -5,7 +5,7 @@ import { ArrowUpRight, Check, ChevronDown, Menu, Phone, Sparkles, X } from "luci
 const heroImage = "/manus-storage/juragankambing-hero_647c54d4.png";
 const processImage = "https://images.unsplash.com/photo-1533318087102-b3ad366ed041?auto=format&fit=crop&w=1200&q=85";
 const menuImage = "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=85";
-const logoImage = "/manus-storage/logo-juragankambing_79e254bb.png";
+const logoImage = "/manus-storage/logo-juragankambing-terbaru_971f573f.png";
 const whatsappUrl = "https://wa.me/628118204142?text=Assalamualaikum%2C%20saya%20ingin%20konsultasi%20paket%20aqiqah.";
 
 const benefits = [
