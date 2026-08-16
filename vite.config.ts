@@ -207,8 +207,7 @@ const isStaticPagesBuild = process.env.GITHUB_ACTIONS === "true";
 const plugins = [
   react(),
   tailwindcss(),
-  jsxLocPlugin(),
-  ...(isStaticPagesBuild ? [] : [vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()]),
+  ...(isStaticPagesBuild ? [] : [jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()]),
 ];
 
 export default defineConfig({
