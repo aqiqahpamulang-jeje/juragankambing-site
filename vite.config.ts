@@ -206,6 +206,8 @@ function vitePluginStorageProxy(): Plugin {
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
 
 export default defineConfig({
+  // GitHub Pages project sites are served below /<repository-name>/.
+  base: process.env.GITHUB_ACTIONS ? "/juragankambing-site/" : "/",
   plugins,
   resolve: {
     alias: {
