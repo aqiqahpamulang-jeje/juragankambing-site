@@ -2,10 +2,11 @@
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Check, ChevronDown, Instagram, MapPin, Menu, MessageCircle, Music2, Phone, Sparkles, X } from "lucide-react";
 
-const heroImage = "/manus-storage/juragankambing-hero_647c54d4.png";
-const processImage = "https://images.unsplash.com/photo-1533318087102-b3ad366ed041?auto=format&fit=crop&w=1200&q=85";
-const menuImage = "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=85";
-const logoImage = "/manus-storage/logo-juragankambing-terbaru_971f573f.png";
+const imagePath = (file: string) => `${import.meta.env.BASE_URL}image/${file}`;
+const heroImage = imagePath("juragankambing-hero.webp");
+const processImage = imagePath("juragankambing-hero.webp");
+const menuImage = imagePath("paket-standar.png");
+const logoImage = imagePath("logo-juragankambing.png");
 const whatsappUrl = "https://wa.me/6285211885000?text=Assalamualaikum%2C%20saya%20ingin%20konsultasi%20paket%20aqiqah.";
 
 const benefits = [
@@ -15,12 +16,12 @@ const benefits = [
 ];
 
 const services = [
-  { number: "01", name: "Katering", image: "/manus-storage/layanan-katering_f7ff495e.jpg", description: "Menyediakan katering dengan menu beragam untuk berbagai acara. Mulai dari menu tradisional hingga modern dengan cita rasa terbaik.", items: ["Menu customizable", "Penyajian profesional", "Kapasitas fleksibel"] },
-  { number: "02", name: "Kambing Guling", image: "/manus-storage/layanan-kambing-guling_3d3ffc9c.jpg", description: "Kambing guling dengan daging pilihan, dimasak dengan bumbu khas yang lezat. Cocok untuk acara keluarga, arisan, dan gathering.", items: ["Daging berkualitas premium", "Bumbu khas yang lezat", "Pengiriman tepat waktu"] },
-  { number: "03", name: "Aqiqah", image: "/manus-storage/layanan-aqiqah_f72e245e.jpg", description: "Layanan aqiqah lengkap dengan penyediaan hewan, pengolahan acara, dan distribusi daging sesuai tradisi Islam.", items: ["Hewan pilihan sehat", "Pengurusan lengkap", "Sesuai syariat"] },
-  { number: "04", name: "Qurban", image: "/manus-storage/layanan-qurban_252d2418.jpg", description: "Layanan qurban untuk memenuhi ibadah Anda. Kami menyediakan hewan berkualitas dan pengelolaan yang transparan serta profesional.", items: ["Hewan berstandar syariat", "Transparansi penuh", "Distribusi tepat"] },
-  { number: "05", name: "Snack Box", image: "/manus-storage/layanan-snack-box_1dc0bd0a.jpg", description: "Paket snack box eksklusif dengan berbagai pilihan cemilan lezat dan berkualitas. Cocok untuk hadiah, souvenir, atau konsumsi pribadi.", items: ["Berbagai pilihan rasa", "Kemasan menarik", "Bisa custom sesuai tema"] },
-  { number: "06", name: "Tumpeng", image: "/manus-storage/layanan-tumpeng_aeedb2c8.jpg", description: "Hidangan tumpeng nasi kuning lezat dengan lauk pauk melimpah. Sempurna untuk acara syukuran, arisan, dan perayaan khusus lainnya.", items: ["Nasi kuning premium", "Lauk pauk variatif", "Porsi bisa disesuaikan"] },
+  { number: "01", name: "Katering", image: imagePath("paket-istimewa.png"), description: "Menyediakan katering dengan menu beragam untuk berbagai acara. Mulai dari menu tradisional hingga modern dengan cita rasa terbaik.", items: ["Menu customizable", "Penyajian profesional", "Kapasitas fleksibel"] },
+  { number: "02", name: "Kambing Guling", image: imagePath("juragankambing-hero.webp"), description: "Kambing guling dengan daging pilihan, dimasak dengan bumbu khas yang lezat. Cocok untuk acara keluarga, arisan, dan gathering.", items: ["Daging berkualitas premium", "Bumbu khas yang lezat", "Pengiriman tepat waktu"] },
+  { number: "03", name: "Aqiqah", image: imagePath("paket-standar.png"), description: "Layanan aqiqah lengkap dengan penyediaan hewan, pengolahan acara, dan distribusi daging sesuai tradisi Islam.", items: ["Hewan pilihan sehat", "Pengurusan lengkap", "Sesuai syariat"] },
+  { number: "04", name: "Qurban", image: imagePath("juragankambing-hero.webp"), description: "Layanan qurban untuk memenuhi ibadah Anda. Kami menyediakan hewan berkualitas dan pengelolaan yang transparan serta profesional.", items: ["Hewan berstandar syariat", "Transparansi penuh", "Distribusi tepat"] },
+  { number: "05", name: "Snack Box", image: imagePath("paket-super.png"), description: "Paket snack box eksklusif dengan berbagai pilihan cemilan lezat dan berkualitas. Cocok untuk hadiah, souvenir, atau konsumsi pribadi.", items: ["Berbagai pilihan rasa", "Kemasan menarik", "Bisa custom sesuai tema"] },
+  { number: "06", name: "Tumpeng", image: imagePath("paket-hemat.png"), description: "Hidangan tumpeng nasi kuning lezat dengan lauk pauk melimpah. Sempurna untuk acara syukuran, arisan, dan perayaan khusus lainnya.", items: ["Nasi kuning premium", "Lauk pauk variatif", "Porsi bisa disesuaikan"] },
 ];
 
 const testimonials = [
@@ -37,10 +38,10 @@ const testimonials = [
 ];
 
 const packages = [
-  { name: "Aqiqah 1 ekor Hemat", price: "Rp 1.700.000", unitPrice: 1700000, detail: "160 tusuk sate & 40 bungkus gulai", menu: "Sate kambing, gulai kambing, nasi putih, sambal, dan acar.", accent: "olive", image: "/manus-storage/paket-hemat_b4d53730.png", items: ["Kambing sehat sesuai syariat", "Masakan olahan kambing", "Nasi box siap dibagikan"] },
-  { name: "Aqiqah 1 ekor Standar", price: "Rp 1.900.000", unitPrice: 1900000, detail: "240 tusuk sate & 60 bungkus gulai", menu: "Sate kambing, gulai kambing, nasi putih, sambal, acar, dan kerupuk.", accent: "orange", image: "/manus-storage/paket-standar_3aa84c95.png", items: ["Kambing sehat sesuai syariat", "Porsi sate dan gulai lebih banyak", "Dokumentasi proses"] },
-  { name: "Aqiqah 1 ekor Super", price: "Rp 2.200.000", unitPrice: 2200000, detail: "320 tusuk sate & 80 bungkus gulai", menu: "Sate kambing, gulai kambing, nasi putih, sambal, acar, kerupuk, dan sayur pelengkap.", accent: "clay", image: "/manus-storage/paket-super_459e53a4.png", items: ["Kambing pilihan lebih besar", "Menu siap dibagikan", "Kemasan rapi untuk keluarga"] },
-  { name: "Aqiqah 1 ekor Istimewa", price: "Rp 2.500.000", unitPrice: 2500000, detail: "400 tusuk sate & 100 bungkus gulai", menu: "Sate kambing, gulai kambing, nasi putih, sambal, acar, kerupuk, sayur pelengkap, dan dessert sederhana.", accent: "terracotta", image: "/manus-storage/paket-istimewa_b32adf1d.png", items: ["Porsi paling lengkap", "Kambing sehat sesuai syariat", "Pendampingan pemesanan"] },
+  { name: "Aqiqah 1 ekor Hemat", price: "Rp 1.700.000", unitPrice: 1700000, detail: "160 tusuk sate & 40 bungkus gulai", menu: "Sate kambing, gulai kambing, nasi putih, sambal, dan acar.", accent: "olive", image: imagePath("paket-hemat.png"), items: ["Kambing sehat sesuai syariat", "Masakan olahan kambing", "Nasi box siap dibagikan"] },
+  { name: "Aqiqah 1 ekor Standar", price: "Rp 1.900.000", unitPrice: 1900000, detail: "240 tusuk sate & 60 bungkus gulai", menu: "Sate kambing, gulai kambing, nasi putih, sambal, acar, dan kerupuk.", accent: "orange", image: imagePath("paket-standar.png"), items: ["Kambing sehat sesuai syariat", "Porsi sate dan gulai lebih banyak", "Dokumentasi proses"] },
+  { name: "Aqiqah 1 ekor Super", price: "Rp 2.200.000", unitPrice: 2200000, detail: "320 tusuk sate & 80 bungkus gulai", menu: "Sate kambing, gulai kambing, nasi putih, sambal, acar, kerupuk, dan sayur pelengkap.", accent: "clay", image: imagePath("paket-super.png"), items: ["Kambing pilihan lebih besar", "Menu siap dibagikan", "Kemasan rapi untuk keluarga"] },
+  { name: "Aqiqah 1 ekor Istimewa", price: "Rp 2.500.000", unitPrice: 2500000, detail: "400 tusuk sate & 100 bungkus gulai", menu: "Sate kambing, gulai kambing, nasi putih, sambal, acar, kerupuk, sayur pelengkap, dan dessert sederhana.", accent: "terracotta", image: imagePath("paket-istimewa.png"), items: ["Porsi paling lengkap", "Kambing sehat sesuai syariat", "Pendampingan pemesanan"] },
 ];
 
 export default function Home() {
