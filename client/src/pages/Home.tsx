@@ -20,7 +20,7 @@ const services = [
   { number: "03", name: "Aqiqah", image: imagePath("layanan-aqiqah.webp"), description: "Layanan aqiqah lengkap dengan penyediaan hewan, pengolahan acara, dan distribusi daging sesuai tradisi Islam.", items: ["Hewan pilihan sehat", "Pengurusan lengkap", "Sesuai syariat"] },
   { number: "04", name: "Qurban", image: imagePath("layanan-qurban.webp"), description: "Layanan qurban untuk memenuhi ibadah Anda. Kami menyediakan hewan berkualitas dan pengelolaan yang transparan serta profesional.", items: ["Hewan berstandar syariat", "Transparansi penuh", "Distribusi tepat"] },
   { number: "05", name: "Snack Box", image: imagePath("layanan-snack-box.webp"), description: "Paket snack box eksklusif dengan berbagai pilihan cemilan lezat dan berkualitas. Cocok untuk hadiah, souvenir, atau konsumsi pribadi.", items: ["Berbagai pilihan rasa", "Kemasan menarik", "Bisa custom sesuai tema"] },
-  { number: "06", name: "Tumpeng", image: imagePath("layanan-tumpeng-baru.webp"), description: "Hidangan tumpeng nasi kuning lezat dengan lauk pauk melimpah. Sempurna untuk acara syukuran, arisan, dan perayaan khusus lainnya.", items: ["Nasi kuning premium", "Lauk pauk variatif", "Porsi bisa disesuaikan"] },
+  { number: "06", name: "Tumpeng", image: imagePath("layanan-tumpeng-30kb.webp"), description: "Hidangan tumpeng nasi kuning lezat dengan lauk pauk melimpah. Sempurna untuk acara syukuran, arisan, dan perayaan khusus lainnya.", items: ["Nasi kuning premium", "Lauk pauk variatif", "Porsi bisa disesuaikan"] },
 ];
 
 const testimonials = [
