@@ -211,7 +211,7 @@ const plugins = [
 ];
 
 export default defineConfig({
-  // The site is served from the custom domain aqiqahpamulang.com.
+  // The site is served from the custom domain juragankambing.id.
   // Keep root-relative asset URLs so both the custom domain and GitHub redirect work.
   base: "/",
   plugins,
